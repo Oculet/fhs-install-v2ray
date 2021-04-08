@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # The files installed by the script conform to the Filesystem Hierarchy Standard:
 # https://wiki.linuxfoundation.org/lsb/fhs
@@ -33,28 +33,17 @@ curl() {
 systemd_cat_config() {
   if systemd-analyze --help | grep -qw 'cat-config'; then
     systemd-analyze --no-pager cat-config "$@"
-    echo
   else
-    echo "${aoi}~~~~~~~~~~~~~~~~"
-    cat "$@" "$1".d/*
-    echo "${aoi}~~~~~~~~~~~~~~~~"
     echo "${red}warning: ${green}The systemd version on the current operating system is too low."
     echo "${red}warning: ${green}Please consider to upgrade the systemd or the operating system.${reset}"
-    echo
   fi
 }
 
 check_if_running_as_root() {
   # If you want to run as another user, please modify $UID to be owned by this user
   if [[ "$UID" -ne '0' ]]; then
-    echo "WARNING: The user currently executing this script is not root. You may encounter the insufficient privilege error."
-    read -r -p "Are you sure you want to continue? [y/n] " cont_without_been_root
-    if [[ x"${cont_without_been_root:0:1}" = x'y' ]]; then
-      echo "Continuing the installation with current user..."
-    else
-      echo "Not running with root, exiting..."
-      exit 1
-    fi
+    echo "error: You must run this script as root!"
+    exit 1
   fi
 }
 
@@ -72,11 +61,9 @@ identify_the_operating_system_and_architecture() {
         ;;
       'armv6l')
         MACHINE='arm32-v6'
-        grep Features /proc/cpuinfo | grep -qw 'vfp' || MACHINE='arm32-v5'
         ;;
       'armv7' | 'armv7l')
         MACHINE='arm32-v7a'
-        grep Features /proc/cpuinfo | grep -qw 'vfp' || MACHINE='arm32-v5'
         ;;
       'armv8' | 'aarch64')
         MACHINE='arm64-v8a'
@@ -129,22 +116,27 @@ identify_the_operating_system_and_architecture() {
       PACKAGE_MANAGEMENT_INSTALL='apt -y --no-install-recommends install'
       PACKAGE_MANAGEMENT_REMOVE='apt purge'
       package_provide_tput='ncurses-bin'
+      package_provide_bsdtar='libarchive-tools'
     elif [[ "$(type -P dnf)" ]]; then
       PACKAGE_MANAGEMENT_INSTALL='dnf -y install'
       PACKAGE_MANAGEMENT_REMOVE='dnf remove'
       package_provide_tput='ncurses'
+      package_provide_bsdtar='bsdtar'
     elif [[ "$(type -P yum)" ]]; then
       PACKAGE_MANAGEMENT_INSTALL='yum -y install'
       PACKAGE_MANAGEMENT_REMOVE='yum remove'
       package_provide_tput='ncurses'
+      package_provide_bsdtar='bsdtar'
     elif [[ "$(type -P zypper)" ]]; then
       PACKAGE_MANAGEMENT_INSTALL='zypper install -y --no-recommends'
       PACKAGE_MANAGEMENT_REMOVE='zypper remove'
       package_provide_tput='ncurses-utils'
+      package_provide_bsdtar='bsdtar'
     elif [[ "$(type -P pacman)" ]]; then
       PACKAGE_MANAGEMENT_INSTALL='pacman -Syu --noconfirm'
       PACKAGE_MANAGEMENT_REMOVE='pacman -Rsn'
       package_provide_tput='ncurses'
+      package_provide_bsdtar='libarchive'
     else
       echo "error: The script does not support the package manager in this operating system."
       exit 1
@@ -215,18 +207,29 @@ install_software() {
   fi
 }
 
+version_number() {
+  case "$1" in
+    'v'*)
+      echo "$1"
+      ;;
+    *)
+      echo "v$1"
+      ;;
+  esac
+}
+
 get_version() {
   # 0: Install or update V2Ray.
   # 1: Installed or no new version of V2Ray.
   # 2: Install the specified version of V2Ray.
   if [[ -n "$VERSION" ]]; then
-    RELEASE_VERSION="v${VERSION#v}"
+    RELEASE_VERSION="$(version_number "$VERSION")"
     return 2
   fi
   # Determine the version number for V2Ray installed from a local file
   if [[ -f '/usr/local/bin/v2ray' ]]; then
-    VERSION="$(/usr/local/bin/v2ray -version | awk 'NR==1 {print $2}')"
-    CURRENT_VERSION="v${VERSION#v}"
+    VERSION="$(/usr/local/bin/v2ray -version)"
+    CURRENT_VERSION="$(version_number "$(echo "$VERSION" | awk 'NR==1 {print $2}')")"
     if [[ "$LOCAL_INSTALL" -eq '1' ]]; then
       RELEASE_VERSION="$CURRENT_VERSION"
       return
@@ -241,7 +244,7 @@ get_version() {
   fi
   RELEASE_LATEST="$(sed 'y/,/\n/' "$TMP_FILE" | grep 'tag_name' | awk -F '"' '{print $4}')"
   "rm" "$TMP_FILE"
-  RELEASE_VERSION="v${RELEASE_LATEST#v}"
+  RELEASE_VERSION="$(version_number "$RELEASE_LATEST")"
   # Compare V2Ray version numbers
   if [[ "$RELEASE_VERSION" != "$CURRENT_VERSION" ]]; then
     RELEASE_VERSIONSION_NUMBER="${RELEASE_VERSION#v}"
@@ -304,7 +307,7 @@ download_v2ray() {
 }
 
 decompression() {
-  if ! unzip -q "$1" -d "$TMP_DIRECTORY"; then
+  if ! bsdtar -C "$TMP_DIRECTORY" -xf "$1"; then
     echo 'error: V2Ray decompression failed.'
     "rm" -r "$TMP_DIRECTORY"
     echo "removed: $TMP_DIRECTORY"
@@ -437,7 +440,7 @@ stop_v2ray() {
 
 check_update() {
   if [[ -f '/etc/systemd/system/v2ray.service' ]]; then
-    get_version
+    (get_version)
     local get_ver_exit_code=$?
     if [[ "$get_ver_exit_code" -eq '0' ]]; then
       echo "info: Found the latest release of V2Ray $RELEASE_VERSION . (Current release: $CURRENT_VERSION)"
@@ -512,7 +515,6 @@ main() {
   install_software "$package_provide_tput" 'tput'
   red=$(tput setaf 1)
   green=$(tput setaf 2)
-  aoi=$(tput setaf 6)
   reset=$(tput sgr0)
 
   # Parameter information
@@ -529,7 +531,7 @@ main() {
     echo 'warn: Install V2Ray from a local file, but still need to make sure the network is available.'
     echo -n 'warn: Please make sure the file is valid because we cannot confirm it. (Press any key) ...'
     read -r
-    install_software 'unzip' 'unzip'
+    install_software "$package_provide_bsdtar" 'bsdtar'
     decompression "$LOCAL_FILE"
   else
     # Normal way
@@ -542,9 +544,9 @@ main() {
       if [[ "$?" -eq '1' ]]; then
         "rm" -r "$TMP_DIRECTORY"
         echo "removed: $TMP_DIRECTORY"
-        exit 1
+        exit 0
       fi
-      install_software 'unzip' 'unzip'
+      install_software "$package_provide_bsdtar" 'bsdtar'
       decompression "$ZIP_FILE"
     elif [[ "$NUMBER" -eq '1' ]]; then
       echo "info: No new version. The current version of V2Ray is $CURRENT_VERSION ."
