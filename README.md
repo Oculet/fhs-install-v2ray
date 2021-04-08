@@ -1,10 +1,5 @@
 # fhs-install-v2ray
 
-> 欲查阅以简体中文撰写的介绍，请访问：[README.zh-Hans-CN.md](README.zh-Hans-CN.md)
-
-> Bash script for installing V2Ray in operating systems such as Debian / CentOS / Fedora / openSUSE that support systemd
-
-該腳本安裝的文件符合 [Filesystem Hierarchy Standard (FHS)](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)：
 
 ```
 installed: /usr/local/bin/v2ray
@@ -19,37 +14,23 @@ installed: /etc/systemd/system/v2ray.service
 installed: /etc/systemd/system/v2ray@.service
 ```
 
-## 重要提示
-
-**不推薦在 docker 中使用本專案安裝 v2ray，請直接使用 [官方映象](https://github.com/v2fly/docker)。**  
-如果官方映象不能滿足您自定義安裝的需要，請以**復刻並修改上游 dockerfile 的方式來實現**。  
-
-本專案**不會為您自動生成配置檔案**；**只解決使用者安裝階段遇到的問題**。其他問題在這裡是無法得到幫助的。  
-請在安裝完成後參閱 [文件](https://www.v2fly.org/) 瞭解配置檔案語法，並自己完成適合自己的配置檔案。過程中可參閱社群貢獻的 [配置檔案模板](https://github.com/v2fly/v2ray-examples)  
-（**提請您注意這些模板複製下來以後是需要您自己修改調整的，不能直接使用**）
-
-## 使用
-
-* 該腳本在執行時會提供 `info` 和 `error` 等信息，請仔細閱讀。
-
-### 安裝和更新 V2Ray
 
 ```
 // 安裝執行檔和 .dat 資料檔
-# bash <(curl -L https://raw.githubusercontent.com/Oculet/fhs-install-v2ray/master/install-release.sh)
+# bash <(curl -L https://github.com/Oculet/fhs-install-v2ray/master/install-release.sh)
 ```
 
 ### 安裝最新發行的 geoip.dat 和 geosite.dat
 
 ```
 // 只更新 .dat 資料檔
-# bash <(curl -L https://raw.githubusercontent.com/Oculet/fhs-install-v2ray/master/install-dat-release.sh)
+# bash <(curl -L https://github.com/Oculet/fhs-install-v2ray/master/install-dat-release.sh)
 ```
 
 ### 移除 V2Ray
 
 ```
-# bash <(curl -L https://raw.githubusercontent.com/Oculet/fhs-install-v2ray/master/install-release.sh) --remove
+# bash <(curl -L https://github.com/Oculet/fhs-install-v2ray/master/install-release.sh) --remove
 ```
 
 ### 解決問題
