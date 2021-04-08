@@ -4,7 +4,7 @@
 # https://wiki.linuxfoundation.org/lsb/fhs
 
 # The URL of the script project is:
-# https://github.com/v2fly/fhs-install-v2ray
+# https://github.com/Oculet/fhs-install-v2ray
 
 # The URL of the script is:
 # https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
