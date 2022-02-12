@@ -1,1 +1,744 @@
-{"imaf001":"5.066.00076","imaa002":"0","imaal003":"板材S355MC","imaal004":"S355MC/2500*1250*1.5","imaa009":"5","imaa009_desc":"原材料","imaa003":"5","imaa003_desc":"原材料","imaa004":"M","imaa006":"KG","imaa006_desc":"千克","imaa010":"10","imaa010_desc":"量产","s1":"Y","imaf051":"5","imaf051_desc":"原材料","imaf053":"KG","imaf053_desc":"千克","imaf054":"N","imaf055":"3","imaf057":"A","imaf058":"0","imaf059":"1","imafownid":"300034","imafownid_desc":"耿富民","imafowndp":"312","imafowndp_desc":"三厂技术研发部","imafcrtid":"300034","imafcrtid_desc":"耿富民","imafcrtdp":"312","imafcrtdp_desc":"三厂技术研发部","imafcrtdt":"2021-07-30 09:48:22","imafmodid":"301723","imafmodid_desc":"徐国强","imafmoddt":"2021-08-11 17:20:25","imaf061":"3","imaf062":"N","imaf064":"3","imaf071":"3","imaf072":"N","imaf074":"3","imaf081":"3","imaf082":"N","imaf084":"3","imaf177":"N","imaf101":0,"imaf102":0,"imaf094":0,"imaf095":0,"imai032":"2021-08-11","imai034":"2021-08-11","imai035":"2019-02-28","imai036":"2021-08-11","imai037":"2021-08-11"}
+Program: asfi301_icd
+Service: AddMO
+Request XML:
+<request>
+ <identity>
+   <transactionid>2022020808252098</transactionid>
+   <moduleid>TP</moduleid>
+   <functionid>SI</functionid>
+   <computername>MES01</computername>
+   <curuserno>QX000190</curuserno>
+   <sendtime>2022/02/08 08:25:20</sendtime>
+ </identity>
+ <parameter>
+
+  <mono>
+    <name>MONo</name>
+    <type>String</type>
+    <value>P502-2202080001</value>
+    <desc></desc>
+  </mono>
+  <rono>
+    <name>RONo</name>
+    <type>String</type>
+    <value>S101-2201200028</value>
+    <desc></desc>
+  </rono>
+  <itemno>
+    <name>ItemNo</name>
+    <type>Numeric</type>
+    <value>     1</value>
+    <desc></desc>
+  </itemno>
+  <customerno>
+    <name>CustomerNo</name>
+    <type>String</type>
+    <value>10124</value>
+    <desc></desc>
+  </customerno>
+  <factoryno>
+    <name>FactoryNo</name>
+    <type>String</type>
+    <value>QX</value>
+    <desc></desc>
+  </factoryno>
+  <moqty>
+    <name>MOQty</name>
+    <type>Numeric</type>
+    <value>        1813815.000000</value>
+    <desc></desc>
+  </moqty>
+  <productno>
+    <name>ItemNo</name>
+    <type>String</type>
+    <value>020040000N1012400098</value>
+    <desc></desc>
+  </productno>
+  <motypeno>
+    <name>MOTypeNo</name>
+    <type>Numeric</type>
+    <value>     1</value>
+    <desc></desc>
+  </motypeno>
+  <planfinishdate>
+    <name>PlanFinishDate</name>
+    <type>Date</type>
+    <value>22/02/08</value>
+    <desc></desc>
+  </planfinishdate>
+  <mounitno>
+    <name>MOUnitNo</name>
+    <type>String</type>
+    <value>EA</value>
+    <desc></desc>
+  </mounitno>
+  <creator>
+    <name>Creator</name>
+    <type>String</type>
+    <value>QX000190</value>
+    <desc></desc>
+  </creator>
+  <sfb86>
+    <name>sfb86</name>
+    <type>String</type>
+    <value>P502-2202080001</value>
+    <desc></desc>
+  </sfb86>
+  <sfb89>
+    <name>sfb89</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </sfb89>
+  <property>
+  <value>
+    <name>MP001</name>
+    <type>String</type>
+    <value>     1</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP002</name>
+    <type>String</type>
+    <value>QX_FC_124_A</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP003</name>
+    <type>String</type>
+    <value>HK5923</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP004</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP005</name>
+    <type>String</type>
+    <value>PL3376C</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP006</name>
+    <type>String</type>
+    <value>SOP7</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP007</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP008</name>
+    <type>String</type>
+    <value>PL3376</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP009</name>
+    <type>String</type>
+    <value>CC203W23</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP010</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP011</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP012</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP013</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP014</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP015</name>
+    <type>String</type>
+    <value>QX-MK-1240098-015</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP016</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP017</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP018</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP019</name>
+    <type>String</type>
+    <value>PM9981ASA1C</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP020</name>
+    <type>String</type>
+    <value>HK5923</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP021</name>
+    <type>String</type>
+    <value>           25.000</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP022</name>
+    <type>String</type>
+    <value>#1-25</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP023</name>
+    <type>String</type>
+    <value>1</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP024</name>
+    <type>String</type>
+    <value>PIB5113H</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP025</name>
+    <type>String</type>
+    <value>P21105268(50#)-2100;P21105270(1-40/42-50#)-398925;P21105271(1-41#)-331630;P21105272(1-50#)-401594;P21105273(1-5/7-11/13-45#)-348005;P21105277(1-32/34-42#)-333044;</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP026</name>
+    <type>String</type>
+    <value>3</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP027</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP028</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP029</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP030</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP031</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP032</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP033</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP034</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP035</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP036</name>
+    <type>String</type>
+    <value>224.3</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP037</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP038</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP039</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP040</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP041</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP042</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP043</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP044</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP045</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP046</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP047</name>
+    <type>String</type>
+    <value>2203</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP048</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP049</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP050</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP051</name>
+    <type>String</type>
+    <value>                 </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP052</name>
+    <type>String</type>
+    <value>                 </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP053</name>
+    <type>String</type>
+    <value>                 </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP054</name>
+    <type>String</type>
+    <value>                 </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP055</name>
+    <type>String</type>
+    <value>                 </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP056</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP057</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP058</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP059</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP060</name>
+    <type>String</type>
+    <value>           </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP061</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP062</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP063</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP064</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP065</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP066</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP067</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP068</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP069</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP070</name>
+    <type>String</type>
+    <value>        </value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP071</name>
+    <type>String</type>
+    <value>PL22000030A</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP072</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP073</name>
+    <type>String</type>
+    <value>BA-QX-1240098</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP074</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP075</name>
+    <type>String</type>
+    <value>MAP-亿芯</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP076</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP077</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP078</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP079</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP080</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP081</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP082</name>
+    <type>String</type>
+    <value></value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP083</name>
+    <type>String</type>
+    <value>BIN01</value>
+    <desc></desc>
+  </value>
+  <value>
+    <name>MP084</name>
+    <type>String</type>
+    <value>SOP-7L</value>
+    <desc></desc>
+  </value>
+  </property>
+  <momateriallist>
+    <name>MOMaterialList</name>
+    <type>String</type>
+    <value>
+      <materialno>0310040000N1012400098</materialno>
+      <materiallevel>     1</materiallevel>
+      <stdqty>        1.00000000</stdqty>
+      <unitno>EA</unitno>
+      <opno>T01010</opno>
+      <putinplacetype>3</putinplacetype>
+      <substitutematerialno>0310040000N1012400098</substitutematerialno>
+      <substitutemateriallevel>     1</substitutemateriallevel>
+      <substitutestdqty>        1.00000000</substitutestdqty>
+      <requireqty>        1813815.000000</requireqty>
+     </value>
+
+  </momateriallist>
+ </parameter>
+</request>
+
+Response XML:
+<response>
+	<identity>
+		<transactionid>2022020808252098</transactionid>
+		<moduleid>TP</moduleid>
+		<functionid>SI</functionid>
+		<computername>MES01</computername>
+		<curuserno>QX000190</curuserno>
+		<sendtime>2022/02/08 08:25:20</sendtime>
+	</identity>
+	<returnvalue></returnvalue>
+	<result>success</result>
+	<exception></exception>
+	<message>
+		<mcode>0000-000000</mcode>
+		<mtype>MES</mtype>
+		<mmsg>新增工單成功</mmsg>
+	</message>
+</response>
+
+
+#------------------------------------------------------------------------------#
+
+
+#--------------------------- (2022-02-08 08:33:37) ----------------------------#
+
+Program: aimt324_icd
+Service: CreateWipInvRaw
+Request XML:
+<request>
+<identity>
+<transactionid>2022020808333767</transactionid>
+<moduleid>TP</moduleid>
+<functionid>SI</functionid>
+<computername>MES01</computername>
+<curuserno>QX000189</curuserno>
+<sendtime>2022/02/0808:33:37</sendtime>
+</identity>
+<parameter>
+
+<materialinno>
+<name>MaterialINNo</name>
+<type>String</type>
+<value>A101-2202080001</value>
+<desc></desc>
+</materialinno>
+<materialinlist>
+<name>MaterialInList</name>
+<type>String</type>
+<value>
+<inventoryno>B02</inventoryno>
+<materialno>0101030003900001</materialno>
+<materiallotno>P22010801</materiallotno>
+<qty>7520.000000</qty>
+<inputdate>22/02/08</inputdate>
+<vendor></vendor>
+<bincode></bincode>
+<mono></mono>
+<expiredate></expiredate>
+<manufacturedate></manufacturedate>
+<gracedate></gracedate>
+<componentno></componentno>
+<s_lasermark></s_lasermark>
+<gooddie>0.000</gooddie>
+<frominventoryno>A02</frominventoryno>
+<toinventoryno>B02</toinventoryno>
+<goodqty>7520.000000</goodqty>
+</value>
+<value>
+<inventoryno>B02</inventoryno>
+<materialno>0101040005000001</materialno>
+<materiallotno>P22010802</materiallotno>
+<qty>348.000000</qty>
+<inputdate>22/02/08</inputdate>
+<vendor></vendor>
+<bincode></bincode>
+<mono></mono>
+<expiredate></expiredate>
+<manufacturedate></manufacturedate>
+<gracedate></gracedate>
+<componentno></componentno>
+<s_lasermark></s_lasermark>
+<gooddie>0.000</gooddie>
+<frominventoryno>A02</frominventoryno>
+<toinventoryno>B02</toinventoryno>
+<goodqty>348.000000</goodqty>
+</value>
+<value>
+<inventoryno>B02</inventoryno>
+<materialno>0101020002700002</materialno>
+<materiallotno>P22010803</materiallotno>
+<qty>244944.000000</qty>
+<inputdate>22/02/08</inputdate>
+<vendor></vendor>
+<bincode></bincode>
+<mono></mono>
+<expiredate></expiredate>
+<manufacturedate></manufacturedate>
+<gracedate></gracedate>
+<componentno></componentno>
+<s_lasermark></s_lasermark>
+<gooddie>0.000</gooddie>
+<frominventoryno>A02</frominventoryno>
+<toinventoryno>B02</toinventoryno>
+<goodqty>244944.000000</goodqty>
+</value>
+
+</materialinlist>
+</parameter>
+</request>
+
+Response XML:
+<response>
+	<identity>
+		<transactionid>2022020808333767</transactionid>
+		<moduleid>TP</moduleid>
+		<functionid>SI</functionid>
+		<computername>MES01</computername>
+		<curuserno>QX000189</curuserno>
+		<sendtime>2022/02/0808:33:37</sendtime>
+	</identity>
+	<returnvalue></returnvalue>
+	<result>success</result>
+	<exception></exception>
+	<message></message>
+</response>
