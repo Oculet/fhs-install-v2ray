@@ -3,25 +3,25 @@ Service: AddMO
 Request XML:
 <request>
  <identity>
-   <transactionid>2022020808252098</transactionid>
+   <transactionid>2022020808411083</transactionid>
    <moduleid>TP</moduleid>
    <functionid>SI</functionid>
    <computername>MES01</computername>
-   <curuserno>QX000190</curuserno>
-   <sendtime>2022/02/08 08:25:20</sendtime>
+   <curuserno>QX000878</curuserno>
+   <sendtime>2022/02/08 08:41:10</sendtime>
  </identity>
  <parameter>
 
   <mono>
     <name>MONo</name>
     <type>String</type>
-    <value>P502-2202080001</value>
+    <value>P502-2202070046</value>
     <desc></desc>
   </mono>
   <rono>
     <name>RONo</name>
     <type>String</type>
-    <value>S101-2201200028</value>
+    <value>S101-2202070012</value>
     <desc></desc>
   </rono>
   <itemno>
@@ -33,7 +33,7 @@ Request XML:
   <customerno>
     <name>CustomerNo</name>
     <type>String</type>
-    <value>10124</value>
+    <value>10168</value>
     <desc></desc>
   </customerno>
   <factoryno>
@@ -45,13 +45,13 @@ Request XML:
   <moqty>
     <name>MOQty</name>
     <type>Numeric</type>
-    <value>        1813815.000000</value>
+    <value>         373928.000000</value>
     <desc></desc>
   </moqty>
   <productno>
     <name>ItemNo</name>
     <type>String</type>
-    <value>020040000N1012400098</value>
+    <value>020040000N1016800025</value>
     <desc></desc>
   </productno>
   <motypeno>
@@ -63,7 +63,7 @@ Request XML:
   <planfinishdate>
     <name>PlanFinishDate</name>
     <type>Date</type>
-    <value>22/02/08</value>
+    <value>22/02/07</value>
     <desc></desc>
   </planfinishdate>
   <mounitno>
@@ -75,13 +75,13 @@ Request XML:
   <creator>
     <name>Creator</name>
     <type>String</type>
-    <value>QX000190</value>
+    <value>QX000878</value>
     <desc></desc>
   </creator>
   <sfb86>
     <name>sfb86</name>
     <type>String</type>
-    <value>P502-2202080001</value>
+    <value>P502-2202070046</value>
     <desc></desc>
   </sfb86>
   <sfb89>
@@ -100,13 +100,13 @@ Request XML:
   <value>
     <name>MP002</name>
     <type>String</type>
-    <value>QX_FC_124_A</value>
+    <value>QX_FC_168</value>
     <desc></desc>
   </value>
   <value>
     <name>MP003</name>
     <type>String</type>
-    <value>HK5923</value>
+    <value>11AP73_1-13</value>
     <desc></desc>
   </value>
   <value>
@@ -118,13 +118,13 @@ Request XML:
   <value>
     <name>MP005</name>
     <type>String</type>
-    <value>PL3376C</value>
+    <value>OB2500NCPA</value>
     <desc></desc>
   </value>
   <value>
     <name>MP006</name>
     <type>String</type>
-    <value>SOP7</value>
+    <value>SOP7MCM</value>
     <desc></desc>
   </value>
   <value>
@@ -136,13 +136,13 @@ Request XML:
   <value>
     <name>MP008</name>
     <type>String</type>
-    <value>PL3376</value>
+    <value>N06P73</value>
     <desc></desc>
   </value>
   <value>
     <name>MP009</name>
     <type>String</type>
-    <value>CC203W23</value>
+    <value>OB2500NCP</value>
     <desc></desc>
   </value>
   <value>
@@ -154,7 +154,7 @@ Request XML:
   <value>
     <name>MP011</name>
     <type>String</type>
-    <value></value>
+    <value>q</value>
     <desc></desc>
   </value>
   <value>
@@ -178,7 +178,7 @@ Request XML:
   <value>
     <name>MP015</name>
     <type>String</type>
-    <value>QX-MK-1240098-015</value>
+    <value>QX-MK-1680025-012</value>
     <desc></desc>
   </value>
   <value>
@@ -202,25 +202,25 @@ Request XML:
   <value>
     <name>MP019</name>
     <type>String</type>
-    <value>PM9981ASA1C</value>
+    <value>OB2500</value>
     <desc></desc>
   </value>
   <value>
     <name>MP020</name>
     <type>String</type>
-    <value>HK5923</value>
+    <value>11AP73</value>
     <desc></desc>
   </value>
   <value>
     <name>MP021</name>
     <type>String</type>
-    <value>           25.000</value>
+    <value>           13.000</value>
     <desc></desc>
   </value>
   <value>
     <name>MP022</name>
     <type>String</type>
-    <value>#1-25</value>
+    <value>1-13</value>
     <desc></desc>
   </value>
   <value>
@@ -232,13 +232,13 @@ Request XML:
   <value>
     <name>MP024</name>
     <type>String</type>
-    <value>PIB5113H</value>
+    <value>MOSFET B5</value>
     <desc></desc>
   </value>
   <value>
     <name>MP025</name>
     <type>String</type>
-    <value>P21105268(50#)-2100;P21105270(1-40/42-50#)-398925;P21105271(1-41#)-331630;P21105272(1-50#)-401594;P21105273(1-5/7-11/13-45#)-348005;P21105277(1-32/34-42#)-333044;</value>
+    <value>晶圆型号：MOSFET B5---DJM1SN60C1AP4864:20-25,35127;DJM1SN60C1CP4941:1-25,175134;DJM1SN60C1CP5118:1-23,25,167780;DJM1SN60C1CP5120:1,3366;</value>
     <desc></desc>
   </value>
   <value>
@@ -304,7 +304,7 @@ Request XML:
   <value>
     <name>MP036</name>
     <type>String</type>
-    <value>224.3</value>
+    <value>54.526</value>
     <desc></desc>
   </value>
   <value>
@@ -370,7 +370,7 @@ Request XML:
   <value>
     <name>MP047</name>
     <type>String</type>
-    <value>2203</value>
+    <value>N06</value>
     <desc></desc>
   </value>
   <value>
@@ -514,7 +514,7 @@ Request XML:
   <value>
     <name>MP071</name>
     <type>String</type>
-    <value>PL22000030A</value>
+    <value>M600-SH2201280013</value>
     <desc></desc>
   </value>
   <value>
@@ -526,19 +526,19 @@ Request XML:
   <value>
     <name>MP073</name>
     <type>String</type>
-    <value>BA-QX-1240098</value>
+    <value>BA-QX-1680025</value>
     <desc></desc>
   </value>
   <value>
     <name>MP074</name>
     <type>String</type>
-    <value></value>
+    <value>QX-MK-1680025-012</value>
     <desc></desc>
   </value>
   <value>
     <name>MP075</name>
     <type>String</type>
-    <value>MAP-亿芯</value>
+    <value>取样200</value>
     <desc></desc>
   </value>
   <value>
@@ -568,7 +568,7 @@ Request XML:
   <value>
     <name>MP080</name>
     <type>String</type>
-    <value></value>
+    <value>OB2500NCP_118_4SITE_QX1</value>
     <desc></desc>
   </value>
   <value>
@@ -580,7 +580,7 @@ Request XML:
   <value>
     <name>MP082</name>
     <type>String</type>
-    <value></value>
+    <value>55360</value>
     <desc></desc>
   </value>
   <value>
@@ -600,16 +600,16 @@ Request XML:
     <name>MOMaterialList</name>
     <type>String</type>
     <value>
-      <materialno>0310040000N1012400098</materialno>
+      <materialno>0310040000N1016800025</materialno>
       <materiallevel>     1</materiallevel>
       <stdqty>        1.00000000</stdqty>
       <unitno>EA</unitno>
       <opno>T01010</opno>
       <putinplacetype>3</putinplacetype>
-      <substitutematerialno>0310040000N1012400098</substitutematerialno>
+      <substitutematerialno>0310040000N1016800025</substitutematerialno>
       <substitutemateriallevel>     1</substitutemateriallevel>
       <substitutestdqty>        1.00000000</substitutestdqty>
-      <requireqty>        1813815.000000</requireqty>
+      <requireqty>         373928.000000</requireqty>
      </value>
 
   </momateriallist>
@@ -619,126 +619,23 @@ Request XML:
 Response XML:
 <response>
 	<identity>
-		<transactionid>2022020808252098</transactionid>
+		<transactionid>2022020808411083</transactionid>
 		<moduleid>TP</moduleid>
 		<functionid>SI</functionid>
 		<computername>MES01</computername>
-		<curuserno>QX000190</curuserno>
-		<sendtime>2022/02/08 08:25:20</sendtime>
+		<curuserno>QX000878</curuserno>
+		<sendtime>2022/02/08 08:41:10</sendtime>
 	</identity>
 	<returnvalue></returnvalue>
-	<result>success</result>
-	<exception></exception>
-	<message>
-		<mcode>0000-000000</mcode>
-		<mtype>MES</mtype>
-		<mmsg>新增工單成功</mmsg>
-	</message>
-</response>
-
-
-#------------------------------------------------------------------------------#
-
-
-#--------------------------- (2022-02-08 08:33:37) ----------------------------#
-
-Program: aimt324_icd
-Service: CreateWipInvRaw
-Request XML:
-<request>
-<identity>
-<transactionid>2022020808333767</transactionid>
-<moduleid>TP</moduleid>
-<functionid>SI</functionid>
-<computername>MES01</computername>
-<curuserno>QX000189</curuserno>
-<sendtime>2022/02/0808:33:37</sendtime>
-</identity>
-<parameter>
-
-<materialinno>
-<name>MaterialINNo</name>
-<type>String</type>
-<value>A101-2202080001</value>
-<desc></desc>
-</materialinno>
-<materialinlist>
-<name>MaterialInList</name>
-<type>String</type>
-<value>
-<inventoryno>B02</inventoryno>
-<materialno>0101030003900001</materialno>
-<materiallotno>P22010801</materiallotno>
-<qty>7520.000000</qty>
-<inputdate>22/02/08</inputdate>
-<vendor></vendor>
-<bincode></bincode>
-<mono></mono>
-<expiredate></expiredate>
-<manufacturedate></manufacturedate>
-<gracedate></gracedate>
-<componentno></componentno>
-<s_lasermark></s_lasermark>
-<gooddie>0.000</gooddie>
-<frominventoryno>A02</frominventoryno>
-<toinventoryno>B02</toinventoryno>
-<goodqty>7520.000000</goodqty>
-</value>
-<value>
-<inventoryno>B02</inventoryno>
-<materialno>0101040005000001</materialno>
-<materiallotno>P22010802</materiallotno>
-<qty>348.000000</qty>
-<inputdate>22/02/08</inputdate>
-<vendor></vendor>
-<bincode></bincode>
-<mono></mono>
-<expiredate></expiredate>
-<manufacturedate></manufacturedate>
-<gracedate></gracedate>
-<componentno></componentno>
-<s_lasermark></s_lasermark>
-<gooddie>0.000</gooddie>
-<frominventoryno>A02</frominventoryno>
-<toinventoryno>B02</toinventoryno>
-<goodqty>348.000000</goodqty>
-</value>
-<value>
-<inventoryno>B02</inventoryno>
-<materialno>0101020002700002</materialno>
-<materiallotno>P22010803</materiallotno>
-<qty>244944.000000</qty>
-<inputdate>22/02/08</inputdate>
-<vendor></vendor>
-<bincode></bincode>
-<mono></mono>
-<expiredate></expiredate>
-<manufacturedate></manufacturedate>
-<gracedate></gracedate>
-<componentno></componentno>
-<s_lasermark></s_lasermark>
-<gooddie>0.000</gooddie>
-<frominventoryno>A02</frominventoryno>
-<toinventoryno>B02</toinventoryno>
-<goodqty>244944.000000</goodqty>
-</value>
-
-</materialinlist>
-</parameter>
-</request>
-
-Response XML:
-<response>
-	<identity>
-		<transactionid>2022020808333767</transactionid>
-		<moduleid>TP</moduleid>
-		<functionid>SI</functionid>
-		<computername>MES01</computername>
-		<curuserno>QX000189</curuserno>
-		<sendtime>2022/02/0808:33:37</sendtime>
-	</identity>
-	<returnvalue></returnvalue>
-	<result>success</result>
-	<exception></exception>
+	<result>fail</result>
+	<exception>
+		<code>0000-999999</code>
+		<sysmsg></sysmsg>
+		<mesmsg>
+			產品未核准
+			 料號:0310040000N1016800025 產品編號不存在於MES系統! 用料等級為半成品.
+		</mesmsg>
+		<stack></stack>
+	</exception>
 	<message></message>
 </response>
