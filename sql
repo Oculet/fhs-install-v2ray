@@ -43,6 +43,7 @@
 # Modify.........: No.FUN-E50039 14/05/15 By liuym 报表栏位25栏增加至40栏 
 # Modify.........: #C20122301-14413 By qiuwl 增加打印帆软报表功能
 # Modify.........: #C21120401-16508 By lijlg 增加报表字段
+# Modify.........: #C21121701-16508 BY lijlg 增加报表字段
 
 DATABASE ds
  
@@ -119,7 +120,7 @@ MAIN
                  "gem02.gem_file.gem02,ina06.ina_file.ina06,",
                  "ina07.ina_file.ina07,inb03.inb_file.inb03,",
                  "inb04.inb_file.inb04,ima02.ima_file.ima02,",
-                 "ima021.ima_file.ima021,",                      #MOD-840423-add
+                 "ima021.ima_file.ima021,",       #MOD-840423-add  
                  "inb10.inb_file.inb10,inb12.inb_file.inb12,",
                  "inb09.inb_file.inb09,inb08.inb_file.inb08,",
                  "inb05.inb_file.inb05,inb06.inb_file.inb06,",
@@ -130,9 +131,11 @@ MAIN
                  "l_inb902.inb_file.inb902,l_inb904_1.inb_file.inb904,",   #C21120401-16508 add
                  "l_inb905.inb_file.inb905,l_inb907_5.inb_file.inb907,",  #C21120401-16508 add
                  "sign_type.type_file.chr1, sign_img.type_file.blob,", #簽核方式, 簽核圖檔    #No.FUN-940043 add
-                 "sign_show.type_file.chr1 ,sign_str.type_file.chr1000," #是否顯示簽核資料(Y/N) #No.FUN-940043 add
+                 "sign_show.type_file.chr1 ,sign_str.type_file.chr1000,", #是否顯示簽核資料(Y/N) #No.FUN-940043 add
                                                                         #簽核字串 #No.TQC-C10034 add sign_str.type_file.chr1000
-                 
+                 "idd05.idd_file.idd05,", #C21120801-16508 add
+                 "idd13.idd_file.idd13,", #C21121701-16508 add
+                 "idd18.idd_file.idd18"  #C21121701-16508 add
                                                                         
     #LET l_table = cl_prt_temptable('aimf300',g_sql) CLIPPED   # 產生Temp Table  #C20122301-14413 mark
     LET l_table = cl_fr_temptable('aimf300',g_sql,'') CLIPPED  #C20122301-14413 add
@@ -479,7 +482,10 @@ FUNCTION aimf300()
 #No.FUN-870163 ---end--
                     inaprsw   LIKE ina_file.inaprsw,  #列印
                     inapost   LIKE ina_file.inapost,  #過帳
-                    inb10     LIKE inb_file.inb10     #檢驗否   #FUN-640080 add
+                    inb10     LIKE inb_file.inb10,     #檢驗否   #FUN-640080 add
+                    idd05     LIKE idd_file.idd05,    #刻号 #C21120801-16508 add
+                    idd13     LIKE idd_file.idd13,    #PCS发料数量#C21121701-16508 add
+                    idd18     LIKE idd_file.idd18     #DIE发料数量#C21121701-16508 add
                     
                     END RECORD
      DEFINE l_i,l_cnt         LIKE type_file.num5     #No.FUN-580005  #No.FUN-690026 SMALLINT
@@ -555,7 +561,7 @@ FUNCTION aimf300()
     LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
                 #" VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,",   #MOD-840423-add  #C20122301-14413 mark
                 " VALUES(",l_sessionid,",to_timestamp('",l_timestamp,"','yyyy-mm-dd hh24-mi-ss.ff'),?,?,?,?,?, ?,?,?,?,?, ",   #MOD-840423-add  #C20122301-14413 add
-                "   ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?)"  #No.FUN-860026  #No.FUN-870163 add  #No.FUN-940043 add 3? #No.TQC-C10034 add 1?         #C211204-16508 add 4?                                                          
+                "   ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?)"  #No.FUN-860026  #No.FUN-870163 add  #No.FUN-940043 add 3? #No.TQC-C10034 add 1?         #C211204-16508 add 4?                                                          
     PREPARE insert_prep FROM g_sql                                                                                                  
     IF STATUS THEN                                                                                                                  
        CALL cl_err('insert_prep:',status,1) 
@@ -607,11 +613,14 @@ FUNCTION aimf300()
                  "       inb07,inb08,inb08_fac,inb16,inb09,inb11,inb12,inb15,",#No.FUN-870163 add inb16 
                  "       inb902,inb903,inb904,inb905,inb906,inb907,",   #No.FUN-560069
                  "       inb922,inb923,inb924,inb925,inb926,inb927,",   #No.FUN-870163
-                 "       inaprsw,inapost,inb10",   #FUN-640080 add inb10  
+                 "       inaprsw,inapost,inb10,idd05,idd13,idd18",   #FUN-640080 add inb10  #C21120801-16508 add idd05
                  "  FROM ina_file,inb_file,OUTER gem_file,",
-                 " OUTER azf_file,OUTER ima_file ",
+                 " OUTER azf_file,OUTER ima_file,OUTER idd_file ",
                  " WHERE ",tm.wc CLIPPED,
                  "   AND ina01=inb01 ",
+                # "   AND ina01=idd10(+) ",
+                 "   AND idd10=inb01",
+                 "   AND idd11=inb03",
                  "   AND ima_file.ima01=inb_file.inb04 ",
                  "   AND gem_file.gem01=ina_file.ina04 ",
                  "   AND azf_file.azf01=inb_file.inb15 ", #6818
@@ -620,6 +629,7 @@ FUNCTION aimf300()
                 #"   AND inapost != 'X' " #FUN-660079
                  "   AND inaconf != 'X' " #FUN-660079
               #  " ORDER BY ina00,ina01,inb03 "
+                 
      IF g_sma.sma79='Y' THEN       #使用保稅系統
         LET l_sql=l_sql CLIPPED,
                   " AND azf_file.azf02='A' ",               #No.MOD-750120 modify
@@ -829,7 +839,7 @@ FUNCTION aimf300()
                                   sr.inb06,sr.inb07,sr.inb15,sr.azf03,l_str2,flag, #No.FUN-860026  add flag
                                   sr.inb16,l_str3,    #No.FUN-870163  #No.FUN-940043 add , 
                                   l_inb902,l_inb904_1,l_inb905,l_inb907_5,#C21120401-16508 add
-                                  "",l_img_blob,"N",""   #No.FUN-940043 add #No.TQC-C10034 add ""
+                                  "",l_img_blob,"N","",sr.idd05,sr.idd13,sr.idd18   #No.FUN-940043 add #No.TQC-C10034 add "" #C21120801-16508 add idd05
       #OUTPUT TO REPORT aimf300_rep(sr.*)
       #FUN-E50039--add--str--
       IF tm.d = 'Y' THEN
